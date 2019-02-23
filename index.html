@@ -16,10 +16,15 @@
       .flexbox-container > div:first-child {
         margin-right: 20px;
       }
+      #errors {
+        color: red;
+      }
     </style>
   </head>
   <body>
     <main id="main">
+      <input name="searchTerms" id="searchTerms" type="text" />
+      <a id="search-link" href="#" onclick="searchRepositories();">Search Repositories</a>
       <div id="errors"></div>
     </main>
     <div class="flexbox-container">
