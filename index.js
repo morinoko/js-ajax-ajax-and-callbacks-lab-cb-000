@@ -31,7 +31,17 @@ function showRepositories(data) {
 }
 
 function showCommits() {
+  let commitURL = ``;
+  $.get(commitURL, function(data) {
+    let commitList = data.map(commit =>
+      `<h3>${SHA}</h3>` +
+      `<p>${author avatar} ${author} ${author login} </p>`
+    ).join('');
 
+    $("#details").html(commitList);
+  }).fail(function (error) {
+    displayError(error);
+  })
 }
 
 function displayError(error) {
