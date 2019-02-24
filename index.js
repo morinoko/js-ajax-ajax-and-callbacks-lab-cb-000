@@ -36,8 +36,9 @@ function showCommits(repoElement) {
   const commitURL = `${githubRoot}/repos/${username}/${repo}/commits`;
   $.get(commitURL, function(data) {
     let commitList = data.map(commit =>
-      `<h3>${commit.sha}</h3>` +
-      `<p><img src="${commit.author.avatar_url}" height="32" width="32" />${commit.author.login} ${commit.commit.author.name}</p>`
+      `<h3>${commit.commit.message}</h3>` +
+      `<p>SHA: ${commit.sha}</p>` +
+      `<p><img src="${commit.author.avatar_url}" height="32" width="32" /> ${commit.author.login} ${commit.commit.author.name}</p>`
     ).join('');
 
     $("#details").html(commitList);
