@@ -35,7 +35,7 @@ function showCommits() {
   $.get(commitURL, function(data) {
     let commitList = data.map(commit =>
       `<h3>${commit.sha}</h3>` +
-      `<p>${commit.author.login} ${commit.commit.author.name} ${author login} </p>`
+      `<p><img src="${commit.author.avatar_url}" />${commit.author.login} ${commit.commit.author.name}</p>`
     ).join('');
 
     $("#details").html(commitList);
