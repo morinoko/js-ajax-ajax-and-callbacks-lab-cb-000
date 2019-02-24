@@ -8,6 +8,7 @@ function searchRepositories() {
 
   console.log("Searching Github for", searchTerms);
 
+  // Get data from Github's API. Display error if error occurs
   $.get(url, function(data) {
     console.log(data);
     showRepositories(data);
