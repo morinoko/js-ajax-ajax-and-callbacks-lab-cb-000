@@ -31,7 +31,7 @@ function showRepositories(data) {
 }
 
 function showCommits(repoElement) {
-  let commitURL = `${githubRoot}/repos/${this.owner.login}/${this.name}/commits`;
+  let commitURL = `${githubRoot}/repos/${repoElement.owner.login}/${this.name}/commits`;
   $.get(commitURL, function(data) {
     let commitList = data.map(commit =>
       `<h3>${commit.sha}</h3>` +
