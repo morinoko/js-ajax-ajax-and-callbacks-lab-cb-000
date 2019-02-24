@@ -35,7 +35,7 @@ function showRepositories(data) {
 function showCommits(repoElement) {
   const username = repoElement.dataset.username;
   const repo = repoElement.dataset.repo
-  const commitURL = `${githubRoot}/repos/${username}/${repo}/commits`;
+  const commitURL = `https://api.github.com/repos/${username}/${repo}/commits`;
 
   $.get(commitURL, function(data) {
     let commitList = data.map(commit =>
