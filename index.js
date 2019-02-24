@@ -23,14 +23,14 @@ function showRepositories(data) {
     `<h2><a href="${repo.html_url}" target="_blank">${repo.name}</a></h2>` +
     `<p>Description: ${repo.description}</p>` +
     `<a href="https://github.com/${repo.owner.login}" target="_blank"><img src="${repo.owner.avatar_url}" height="32" width="32" /> ${repo.owner.login}</a><br>` +
-    '<a href="#" onclick="showCommits()">Show Commits</a>' +
+    '<a href="#" onclick="showCommits(this)">Show Commits</a>' +
     "</div>"
   ).join('');
 
   $("#results").html('<ul>' + repoList + '</ul>');
 }
 
-function showCommits() {
+function showCommits(repoElement) {
   let commitURL = `${githubRoot}/repos/${this.owner.login}/${this.name}/commits`;
   $.get(commitURL, function(data) {
     let commitList = data.map(commit =>
