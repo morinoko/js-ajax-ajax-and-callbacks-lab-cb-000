@@ -31,11 +31,11 @@ function showRepositories(data) {
 }
 
 function showCommits() {
-  let commitURL = ``;
+  let commitURL = `${githubRoot}/repos/${this.owner.login}/${this.name}/commits`;
   $.get(commitURL, function(data) {
     let commitList = data.map(commit =>
-      `<h3>${SHA}</h3>` +
-      `<p>${author avatar} ${author} ${author login} </p>`
+      `<h3>${commit.sha}</h3>` +
+      `<p>${commit.author.login} ${commit.commit.author.name} ${author login} </p>`
     ).join('');
 
     $("#details").html(commitList);
