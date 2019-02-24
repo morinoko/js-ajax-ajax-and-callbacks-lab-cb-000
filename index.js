@@ -1,15 +1,10 @@
-$(document).ready(function (){
-
-});
-const githubRoot = "https://api.github.com";
-
 function searchRepositories() {
   $("#errors").html("");
 
-  let searchTerms = $('#searchTerms').val();
+  const searchTerms = $('#searchTerms').val();
   console.log("Searching Github for", searchTerms);
 
-  let url = `https://api.github.com/search/repositories?q=${searchTerms}`;
+  const url = `https://api.github.com/search/repositories?q=${searchTerms}`;
 
   $.get(url, function(data) {
     console.log(data);
@@ -54,3 +49,7 @@ function displayError() {
   let errorDiv = $("#errors");
   errorDiv.html("I'm sorry, there's been an error. Please try again.");
 }
+
+$(document).ready(function (){
+
+});
