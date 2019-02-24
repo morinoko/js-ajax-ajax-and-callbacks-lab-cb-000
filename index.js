@@ -9,7 +9,7 @@ function searchRepositories() {
   let searchTerms = $('#searchTerms').val();
   console.log("Searching Github for", searchTerms);
 
-  let url = `https://api.github.com/users/${searchTerms}/repos`;
+  let url = `https://api.github.com/search/repositories/?q=${searchTerms}`;
 
   $.get(url, function(data) {
     console.log(data);
