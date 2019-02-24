@@ -4,6 +4,8 @@ $(document).ready(function (){
 const githubRoot = "https://api.github.com";
 
 function searchRepositories() {
+  $("#errors").html("");
+  
   let searchTerms = $('#searchTerms').val();
   console.log("Searching Github for", searchTerms);
 
