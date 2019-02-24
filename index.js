@@ -50,8 +50,7 @@ function showCommits(repoElement) {
   });
 }
 
-function displayError(error) {
+function displayError() {
   let errorDiv = $("#errors");
   errorDiv.html("I'm sorry, there's been an error. Please try again.");
-  errorDiv.append(`<p>Error details: ${error.statusText}</p>`);
 }
