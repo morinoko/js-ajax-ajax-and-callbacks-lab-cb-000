@@ -12,6 +12,7 @@ function searchRepositories() {
   let url = `https://api.github.com/search/repositories?q=${searchTerms}`;
 
   $.get(url, function(data) {
+    data = JSON.parse(data);]
     console.log(data);
     showRepositories(data);
   }).fail(function(error) {
