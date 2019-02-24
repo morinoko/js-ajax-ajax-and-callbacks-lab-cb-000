@@ -1,10 +1,12 @@
 function searchRepositories() {
+  // Clear errors, if any
   $("#errors").html("");
 
+  // Get search term from input and create API search url
   const searchTerms = $('#searchTerms').val();
-  console.log("Searching Github for", searchTerms);
-
   const url = `https://api.github.com/search/repositories?q=${searchTerms}`;
+
+  console.log("Searching Github for", searchTerms);
 
   $.get(url, function(data) {
     console.log(data);
