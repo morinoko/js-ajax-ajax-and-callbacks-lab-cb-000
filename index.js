@@ -41,7 +41,7 @@ function showCommits() {
     $("#details").html(commitList);
   }).fail(function (error) {
     displayError(error);
-  })
+  });
 }
 
 function displayError(error) {
