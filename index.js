@@ -25,7 +25,7 @@ function showRepositories(data) {
     `<h2><a href="${repo.html_url}" target="_blank">${repo.name}</a></h2>` +
     `<p>Description: ${repo.description}</p>` +
     `<a href="https://github.com/${repo.owner.login}" target="_blank"><img src="${repo.owner.avatar_url}" height="32" width="32" /> ${repo.owner.login}</a><br>` +
-    `<a href="#" data-repo="${repo.name}" data-username="${repo.owner.login}" onclick="showCommits(this)">Show Commits</a>` +
+    `<a href="#" data-repository="${repo.name}" data-owner="${repo.owner.login}" onclick="showCommits(this)">Show Commits</a>` +
     "</div>"
   ).join('');
 
@@ -33,8 +33,8 @@ function showRepositories(data) {
 }
 
 function showCommits(repoElement) {
-  const username = repoElement.dataset.username;
-  const repo = repoElement.dataset.repo
+  const username = repoElement.dataset.owner;
+  const repo = repoElement.dataset.repository
   const commitURL = `https://api.github.com/repos/${username}/${repo}/commits`;
 
   $.get(commitURL, function(data) {
