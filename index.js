@@ -29,7 +29,7 @@ function renderRepository(repo) {
 
 function showRepositories(data) {
   const repoList = data.items.map(repo =>
-    renderRepository(repo);
+    return renderRepository(repo);
   ).join('');
 
   $("#results").html('<ul>' + repoList + '</ul>');
