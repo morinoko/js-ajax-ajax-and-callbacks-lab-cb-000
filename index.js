@@ -18,7 +18,7 @@ function searchRepositories() {
 }
 
 function showRepositories(data) {
-  let repoList = data.items.map(repo =>
+  const repoList = data.items.map(repo =>
     "<div>" +
     `<h2><a href="${repo.html_url}" target="_blank">${repo.name}</a></h2>` +
     `<p>Description: ${repo.description}</p>` +
